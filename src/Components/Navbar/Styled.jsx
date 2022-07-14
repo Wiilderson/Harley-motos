@@ -70,11 +70,31 @@ export const DropdownContent = styled.div`
   box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
   font-weight: 500;
   color: #333;
-  width: 95%;
 
   div {
     padding: 10px;
-    cursor: pointer;
+    cursor: default;
     transition: all 0.2s;
   }
+`;
+
+export const FlexCart = styled.div`
+  width: 290px;
+  display: flex;
+  > img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+  > div {
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    gap: 10px;
+  }
+`;
+
+export const SpanCont = styled.div`
+  width: 110px;
 `;

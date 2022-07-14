@@ -4,18 +4,28 @@ import {
   Dropdown,
   DropdownBtn,
   DropdownContent,
+  FlexCart,
   Menu,
+  SpanCont,
 } from "./Styled";
 import { Link } from "react-router-dom";
 import { BsFillCartPlusFill } from "react-icons/bs";
 import { RiArrowDownSFill } from "react-icons/ri";
+import { FaTrash } from "react-icons/fa";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { delCart } from "../../Redux/Action";
 
 function Navbar() {
-  //const state1 = 20;
-
   const state = useSelector((state) => state.handleCart);
+  console.log(state);
+
+  const dispatch = useDispatch();
+
+  const removeItemCart = (item) => {
+    dispatch(delCart(item));
+  };
 
   const [isActive, setIsActive] = useState(false);
   return (
@@ -60,17 +70,37 @@ function Navbar() {
               </DropdownBtn>
 
               {isActive && (
-                <DropdownContent
-                  onClick={(e) => {
-                    setIsActive(false);
-                  }}
-                >
+                <DropdownContent>
                   {state.length > 0 ? (
                     <>
-                      <span>Cart is full!</span>
+                      {state.map((state) => (
+                        <>
+                          <FlexCart>
+                            <span key={state.id} />
+                            <img src={state.image} alt={state.name} />
+                            <div>
+                              <span>{state.title.substr(0, 10)}</span>
+                              <span>R${state.price}</span>
+                              <FaTrash
+                                onClick={() => removeItemCart(state)}
+                                size={18}
+                                // color="#f7f8f8"
+                                color="#0a0a0a"
+                                style={{
+                                  backgroundColor: "transparent",
+                                  cursor: "pointer",
+                                  marginLeft: "10px",
+                                }}
+                              />
+                            </div>
+                          </FlexCart>
+                        </>
+                      ))}
                     </>
                   ) : (
-                    <span>Cart is Empty!</span>
+                    <SpanCont>
+                      <span>Cart is Empty!</span>
+                    </SpanCont>
                   )}
                 </DropdownContent>
               )}
