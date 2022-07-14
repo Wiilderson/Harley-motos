@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import API from "../../../Services/API";
+import Navbar from "../../Navbar/Navbar";
+import { Container, ImgProduct, InforProduct } from "./Styled";
 
 function SingleMotoItem() {
   const { id } = useParams();
@@ -7,9 +10,9 @@ function SingleMotoItem() {
   const [moto, setMoto] = useState([]);
 
   const getSingleMoto = async () => {
-    const res = await API.get(`https://fakestoreapi.com/products/${id}`);
-
-    setMoto(res.json());
+    await API.get(`/${id}`)
+      .then((response) => setMoto(response.data))
+      .catch((error) => console.log("error", error));
   };
 
   useEffect(() => {
@@ -18,14 +21,33 @@ function SingleMotoItem() {
 
   return (
     <>
-      <div>
-        <div>
-          <img src="" alt="" />
-        </div>
-        <div>
-          <h1>title</h1>
-        </div>
-      </div>
+      <Navbar />
+      <Container>
+        <ImgProduct>
+          <img src={moto.image} alt="imagem product" className="img" />
+        </ImgProduct>
+        <InforProduct>
+          <div>
+            <h4>{moto.category}</h4>
+            <h1> {moto.title}</h1>
+            <p>
+              Rating {moto.rating && moto.rate}
+              <i></i>
+            </p>
+            <h3>R${moto.price}</h3>
+            <p>{moto.description}</p>
+            <button
+
+            // onClick={() => addProduct('')}
+            >
+              Add to Cart
+            </button>
+            <Link className="Link" to="/cart">
+              Cart
+            </Link>
+          </div>
+        </InforProduct>
+      </Container>
     </>
   );
 }
