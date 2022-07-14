@@ -52,6 +52,13 @@ export const DropdownBtn = styled.button`
   border: none;
   border-radius: 6px;
   height: 34px;
+
+  > span {
+    font-size: 17px;
+    color: #f7f8f8;
+    align-items: center;
+    margin-left: 9px;
+  }
 `;
 
 export const DropdownContent = styled.div`

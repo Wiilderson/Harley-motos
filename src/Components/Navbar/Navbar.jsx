@@ -10,9 +10,12 @@ import { Link } from "react-router-dom";
 import { BsFillCartPlusFill } from "react-icons/bs";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 function Navbar() {
-  const state = 0;
+  //const state1 = 20;
+
+  const state = useSelector((state) => state.handleCart);
 
   const [isActive, setIsActive] = useState(false);
   return (
@@ -42,6 +45,8 @@ function Navbar() {
                     cursor: "pointer",
                   }}
                 />
+                <span> {state.length} </span>
+
                 <RiArrowDownSFill
                   size={23}
                   // color="#f7f8f8"
@@ -52,7 +57,6 @@ function Navbar() {
                     marginLeft: "4px",
                   }}
                 />
-                <span className="fas fa-caret-down"></span>
               </DropdownBtn>
 
               {isActive && (
@@ -61,14 +65,9 @@ function Navbar() {
                     setIsActive(false);
                   }}
                 >
-                  {state > 0 ? (
+                  {state.length > 0 ? (
                     <>
                       <span>Cart is full!</span>
-                      {/* <Link to="/cart">
-                    <Button style={{ width: "95%", margin: "0 10px" }}>
-                      Go To Cart
-                    </Button>
-                  </Link> */}
                     </>
                   ) : (
                     <span>Cart is Empty!</span>
@@ -84,3 +83,27 @@ function Navbar() {
 }
 
 export default Navbar;
+
+// {cart.map((prod) => (
+//   <span className="cartitem" key={prod.id}>
+//     <img
+//       src={prod.image}
+//       className="cartItemImg"
+//       alt={prod.name}
+//     />
+//     <div className="cartItemDetail">
+//       <span>{prod.name}</span>
+//       <span>₹ {prod.price.split(".")[0]}</span>
+//     </div>
+//     <AiFillDelete
+//       fontSize="20px"
+//       style={{ cursor: "pointer" }}
+//       onClick={() =>
+//         dispatch({
+//           type: "REMOVE_FROM_CART",
+//           payload: prod,
+//         })
+//       }
+//     />
+//   </span>
+// ))}

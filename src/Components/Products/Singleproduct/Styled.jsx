@@ -4,7 +4,7 @@ export const Container = styled.div`
   background-color: #f2f2f2;
   display: flex;
   width: 100%;
-  height: 400px;
+  height: 82vh;
 `;
 
 export const ImgProduct = styled.div`
