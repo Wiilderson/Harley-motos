@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../Navbar/Navbar";
-import { Container, Item } from "./Styled";
+import { Container, Item, TotalItens } from "./Styled";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { delCart } from "../../Redux/Action";
+import { clearCart, delCart } from "../../Redux/Action";
 import { FaTrash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Cart() {
   const state = useSelector((state) => state.handleCart);
@@ -15,6 +16,19 @@ function Cart() {
   const removeItemCart = (item) => {
     dispatch(delCart(item));
   };
+
+  const buyProductCart = (item) => {
+    console.log(item);
+    dispatch(clearCart(item));
+  };
+
+  const [total, setTotal] = useState();
+  useEffect(() => {
+    setTotal(
+      state.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
+    );
+  }, [state]);
+
   return (
     <>
       <Navbar />
@@ -43,7 +57,16 @@ function Cart() {
             ))}
           </div>
         </Item>
-        <div> bloco 2 itens</div>
+        <TotalItens>
+          <div>
+            <h1>Subtotal ({state.length}) itens</h1>
+            <h2>Total: R$ {total}</h2>
+
+            <Link to="/produtos">
+              <button onClick={() => buyProductCart(state)}>Comprar</button>
+            </Link>
+          </div>
+        </TotalItens>
       </Container>
     </>
   );

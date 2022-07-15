@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  background-color: gray;
   display: flex;
+  background-color: #f2f2f2;
 `;
 
 export const Item = styled.div`
@@ -49,5 +49,28 @@ export const Item = styled.div`
   .infos {
     justify-content: space-between;
     display: flex;
+  }
+`;
+
+export const TotalItens = styled.div`
+  width: 20%;
+  background-color: #323232;
+  height: 60vh;
+  color: white;
+  display: flex;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+
+    button {
+      margin-top: 55px;
+      width: 11.8em;
+      color: black;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
   }
 `;

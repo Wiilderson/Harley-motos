@@ -118,27 +118,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-// {cart.map((prod) => (
-//   <span className="cartitem" key={prod.id}>
-//     <img
-//       src={prod.image}
-//       className="cartItemImg"
-//       alt={prod.name}
-//     />
-//     <div className="cartItemDetail">
-//       <span>{prod.name}</span>
-//       <span>₹ {prod.price.split(".")[0]}</span>
-//     </div>
-//     <AiFillDelete
-//       fontSize="20px"
-//       style={{ cursor: "pointer" }}
-//       onClick={() =>
-//         dispatch({
-//           type: "REMOVE_FROM_CART",
-//           payload: prod,
-//         })
-//       }
-//     />
-//   </span>
-// ))}

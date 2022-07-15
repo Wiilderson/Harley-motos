@@ -36,6 +36,9 @@ export const handleCart = (state = cart, { type, payload }) => {
         );
       }
 
+    case actionTypes.COMPRAFEITA:
+      return cart;
+
     default:
       return state;
   }

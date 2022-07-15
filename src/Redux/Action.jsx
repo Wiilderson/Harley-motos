@@ -1,6 +1,7 @@
 export const actionTypes = {
   ADDITEM: "ADDITEM",
   DELITEM: "DELITEM",
+  COMPRAFEITA: "COMPRAFEITA",
 };
 
 export const addCart = (product) => {
@@ -15,4 +16,8 @@ export const delCart = (product) => {
     type: actionTypes.DELITEM,
     payload: product,
   };
+};
+
+export const clearCart = (product) => {
+  return { type: actionTypes.COMPRAFEITA, payload: product };
 };

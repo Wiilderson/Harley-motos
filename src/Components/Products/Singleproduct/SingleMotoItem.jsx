@@ -46,9 +46,9 @@ function SingleMotoItem() {
             <p>{moto.description}</p>
             <button onClick={() => addProductTocart(moto)}>Add to Cart</button>
 
-            <Link className="Link" to="/cart">
+            {/* <Link className="Link" to="/cart">
               Cart
-            </Link>
+            </Link> */}
           </div>
         </InforProduct>
       </Container>
