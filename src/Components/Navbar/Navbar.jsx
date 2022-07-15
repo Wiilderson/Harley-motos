@@ -75,11 +75,11 @@ function Navbar() {
                     <>
                       {state.map((state) => (
                         <>
-                          <FlexCart>
-                            <span key={state.id} />
+                          <FlexCart key={state.id}>
+                            {/* <span key={index} /> */}
                             <img src={state.image} alt={state.name} />
                             <div>
-                              <span>{state.title.substr(0, 10)}</span>
+                              <span>{state.title.substring(0, 10)}</span>
                               <span>R${state.price}</span>
                               <FaTrash
                                 onClick={() => removeItemCart(state)}
@@ -102,6 +102,11 @@ function Navbar() {
                       <span>Cart is Empty!</span>
                     </SpanCont>
                   )}
+                  <div>
+                    <Link to="/cart">
+                      <button className="">GotoCart</button>
+                    </Link>
+                  </div>
                 </DropdownContent>
               )}
             </Dropdown>
