@@ -115,6 +115,8 @@ export const CardButton = styled.button`
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
 
+  margin-bottom: 10px;
+
   &:hover {
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
     transform: translate(0, -5px);
@@ -131,7 +133,13 @@ export const CardLink = styled.a`
   cursor: pointer;
   transition: color 0.25s ease-in;
 
+  margin-top: 10px;
+
   &:hover {
     color: #777;
   }
+`;
+
+export const Span = styled.span`
+  color: #da871c;
 `;

@@ -1,5 +1,6 @@
-import LogoTech from "../../Assets/Logo.svg";
+import LogoMoto from "../../Assets/Moto.svg";
 import {
+  Button,
   ContainerHeader,
   Dropdown,
   DropdownBtn,
@@ -8,14 +9,16 @@ import {
   Menu,
   SpanCont,
 } from "./Styled";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BsFillCartPlusFill } from "react-icons/bs";
 import { RiArrowDownSFill } from "react-icons/ri";
 import { FaTrash } from "react-icons/fa";
+import { FiLogOut } from "react-icons/fi";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { delCart } from "../../Redux/Action";
+import useAuth from "../../ContextAuth/UseAuth";
 
 function Navbar() {
   const state = useSelector((state) => state.handleCart);
@@ -28,13 +31,17 @@ function Navbar() {
   };
 
   const [isActive, setIsActive] = useState(false);
+
+  const { signout } = useAuth();
+  const navigate = useNavigate();
   return (
     <ContainerHeader>
       <Menu>
-        <img src={LogoTech} alt="Logo Tech" />
+        <img src={LogoMoto} alt="LogoMOTO" />
+
         <ul>
           <li>
-            <Link className="Link" to="/">
+            <Link className="Link" to="/home">
               Home
             </Link>
           </li>
@@ -102,14 +109,30 @@ function Navbar() {
                       <span>Cart is Empty!</span>
                     </SpanCont>
                   )}
-                  <div>
-                    <Link to="/cart">
-                      <button className="">GotoCart</button>
-                    </Link>
-                  </div>
+                  {state.length > 0 ? (
+                    <div>
+                      <Link to="/cart">
+                        <button className="button">GotoCart</button>
+                      </Link>
+                    </div>
+                  ) : null}
                 </DropdownContent>
               )}
             </Dropdown>
+          </li>
+          <li>
+            <Button onClick={() => [signout(), navigate("/")]}>
+              <FiLogOut
+                size={18}
+                color="#fafafa"
+                style={{
+                  backgroundColor: "transparent",
+                  cursor: "pointer",
+                  marginRight: "2px",
+                }}
+              />
+              Sair
+            </Button>
           </li>
         </ul>
       </Menu>

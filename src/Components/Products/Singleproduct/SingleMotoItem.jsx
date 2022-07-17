@@ -36,19 +36,11 @@ function SingleMotoItem() {
         </ImgProduct>
         <InforProduct>
           <div>
-            <h4>{moto.category}</h4>
             <h1> {moto.title}</h1>
-            <p>
-              Rating {moto.rating && moto.rate}
-              <i></i>
-            </p>
-            <h3>R${moto.price}</h3>
+            <h3>R${moto.price},00</h3>
+            <h4>{moto.cc} - Cilindradas</h4>
             <p>{moto.description}</p>
             <button onClick={() => addProductTocart(moto)}>Add to Cart</button>
-
-            {/* <Link className="Link" to="/cart">
-              Cart
-            </Link> */}
           </div>
         </InforProduct>
       </Container>

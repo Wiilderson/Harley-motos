@@ -30,11 +30,14 @@ function ShowMotos() {
               <CardInfos>
                 {/* <AiOutlineCalendar size={20} color="#565656" /> */}
                 <h3>{product.title.substring(0, 12)}</h3>
-
-                <p>${product.price}</p>
+                <div>
+                  <p>R$ {product.price},00</p>
+                  <p>Cilindrada: {product.cc}</p>
+                </div>
               </CardInfos>
-              <Link to={`/detalhes/${product.id}`}>Details</Link>
-              {/* <button>Details</button> */}
+              <Link className="link" to={`/detalhes/${product.id}`}>
+                <button>Details</button>
+              </Link>
             </CardNews>
           ))}
         </CardsNewsContainer>

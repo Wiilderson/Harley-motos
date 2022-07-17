@@ -16,6 +16,10 @@ export const Menu = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  > img {
+    width: 200px;
+  }
+
   ul {
     display: flex;
     list-style: none;
@@ -76,6 +80,22 @@ export const DropdownContent = styled.div`
     cursor: default;
     transition: all 0.2s;
   }
+
+  .button {
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    font-size: 23px;
+    cursor: pointer;
+    background-color: #4e4e4e;
+    color: #fafafa;
+    :hover {
+      background-color: white;
+      color: #4e4e4e;
+      border: 1px solid;
+    }
+  }
 `;
 
 export const FlexCart = styled.div`
@@ -97,4 +117,20 @@ export const FlexCart = styled.div`
 
 export const SpanCont = styled.div`
   width: 110px;
+`;
+
+export const Button = styled.button`
+  height: 34px;
+  box-shadow: 3px 3px 10px 6px rgb(0 0 0 / 6%);
+  font-size: 24px;
+  border: none;
+  background-color: darkgrey;
+  width: 89px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+
+  :hover {
+    background-color: #9e6213;
+  }
 `;

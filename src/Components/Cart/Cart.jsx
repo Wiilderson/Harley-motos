@@ -5,13 +5,14 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { clearCart, delCart } from "../../Redux/Action";
 import { FaTrash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
   const state = useSelector((state) => state.handleCart);
   console.log(state);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const removeItemCart = (item) => {
     dispatch(delCart(item));
@@ -20,6 +21,9 @@ function Cart() {
   const buyProductCart = (item) => {
     console.log(item);
     dispatch(clearCart(item));
+
+    alert("Compra efetuada com sucesso");
+    navigate("/produtos");
   };
 
   const [total, setTotal] = useState();
@@ -62,9 +66,7 @@ function Cart() {
             <h1>Subtotal ({state.length}) itens</h1>
             <h2>Total: R$ {total}</h2>
 
-            <Link to="/produtos">
-              <button onClick={() => buyProductCart(state)}>Comprar</button>
-            </Link>
+            <button onClick={() => buyProductCart(state)}>Comprar</button>
           </div>
         </TotalItens>
       </Container>

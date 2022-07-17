@@ -21,18 +21,18 @@ export const Item = styled.div`
     gap: 2em;
 
     img {
-      width: 148px;
+      width: 30%;
       height: 140px;
     }
 
     div {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: space-evenly;
       width: 70%;
 
       .span1 {
-        width: 40%;
+        width: 29%;
         display: flex;
         flex-wrap: wrap;
       }
@@ -59,18 +59,24 @@ export const TotalItens = styled.div`
   color: white;
   display: flex;
 
-  > div {
+  div {
     display: flex;
     flex-direction: column;
     margin-left: 20px;
 
-    button {
+    > button {
       margin-top: 55px;
       width: 11.8em;
       color: black;
       border-radius: 5px;
       border: none;
       cursor: pointer;
+
+      :hover {
+        background-color: #323232;
+        color: white;
+        border: 1px solid;
+      }
     }
   }
 `;

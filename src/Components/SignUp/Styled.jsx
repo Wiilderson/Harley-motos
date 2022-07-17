@@ -8,6 +8,10 @@ export const CardWrapper = styled.div`
   font-family: Quicksand, arial, sans-serif;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0px 40px rgba(0, 0, 0, 0.08);
   border-radius: 5px;
+
+  span {
+    color: #da871c;
+  }
 `;
 
 export const CardHeader = styled.header`
@@ -101,6 +105,7 @@ export const CardOptionsItem = styled.li`
 `;
 
 export const CardButton = styled.button`
+  margin-bottom: 10px;
   display: block;
   width: 100%;
   padding: 12px 0;
@@ -122,6 +127,7 @@ export const CardButton = styled.button`
 `;
 
 export const CardLink = styled.a`
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   font-size: 13px;

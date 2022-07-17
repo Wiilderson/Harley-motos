@@ -23,13 +23,11 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/home" element={<Private Home={<Homepage />} />} />
-            {/* <Route path="/" element={<Login />} /> */}
             <Route path="/cadastrar" element={<SignUp />} />
             <Route path="*" element={<Login />} />
             <Route path="/produtos" element={<ShowMotos />} />
             <Route path="/detalhes/:id" element={<SingleMotoItem />} />
             <Route path="/cart" element={<Cart />} />
-            {/* <Route path="/register" element={<Register />} /> */}
           </Routes>
         </BrowserRouter>
       </AuthProvider>

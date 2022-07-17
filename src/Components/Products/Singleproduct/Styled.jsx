@@ -17,18 +17,33 @@ export const ImgProduct = styled.div`
   .img {
     margin-left: 30%;
     margin-top: 10px;
-    width: 400px;
+    width: 65%;
     height: 400px;
   }
 `;
 
 export const InforProduct = styled.div`
   width: 50%;
-  /* background-color: gray; */
 
-  > div {
-    margin-left: 30px;
+  div {
+    margin-left: 50px;
     width: 50%;
+
+    h4 {
+      font-size: 14px;
+    }
+
+    button {
+      border: none;
+      margin-top: 30px;
+      cursor: pointer;
+      background-color: #4e4e4e;
+      color: #ffffff;
+
+      :hover {
+        background-color: #835d5d;
+      }
+    }
   }
 
   .Link {

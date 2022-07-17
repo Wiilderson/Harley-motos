@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "SPORT GLIDE™",
+      "price": 104.990,
+      "description": "Uma combinação agressiva entre agilidade de cruzeiro e touring de longa distância.",
+      "image": "https://www.harley-davidson.com/content/dam/h-d/images/product-images/bikes/motorcycle/2022/2022-sport-glide/2022-sport-glide-f57/360/2022-sport-glide-f57-motorcycle-01.jpg?impolicy=myresize&rw=1600",
+      "cc": "1.745 cm3"
+    },
+    {
+      "id": 2,
+      "title": "FAT BOB™",
+      "price": 114.997,
+      "description": "Uma devoradora de ruas com fome de potência. Construída para alto desempenho com estilo massivo.",
+      "image": "https://www.harley-davidson.com/content/dam/h-d/images/product-images/bikes/motorcycle/2022/2022-fat-bob-114/2022-fat-bob-114-f57/360/2022-fat-bob-114-f57-motorcycle-01.jpg?impolicy=myresize&rw=1600",
+      "cc": "1.868 cm3"
+    },
+    {
+      "id": 3,
+      "title": "LOW RIDER™ S",
+      "price": 94.990,
+      "description": "Uma cruiser de alto desempenho totalmente preta com customização de fábrica.",
+      "image": "https://www.harley-davidson.com/content/dam/h-d/images/product-images/bikes/motorcycle/2022/2022-low-rider-s/2022-low-rider-s-f52/360/2022-low-rider-s-f52-motorcycle-01.jpg?impolicy=myresize&rw=1600",
+      "cc": "1.868 cm3"
+    },
+    {
+      "id": 4,
+      "title": "BREAKOUT™",
+      "price": 153.390,
+      "description": "Longa, esguia e malvada. Uma chopper moderna e forte que transforma qualquer farol em uma drag strip.",
+      "image": "https://www.harley-davidson.com/content/dam/h-d/images/product-images/bikes/motorcycle/2022/2022-breakout-114/2022-breakout-114-f59/360/2022-breakout-114-f59-motorcycle-01.jpg?impolicy=myresize&rw=1600",
+      "cc": "1.868 cm3"
+    },
+    {
+      "id": 5,
+      "title": "FAT BOY™",
+      "price": 65.400,
+      "description": "O ícone fat custom original, agora com acabamentos cromados",
+      "image": "https://www.harley-davidson.com/content/dam/h-d/images/product-images/bikes/motorcycle/2022/2022-fat-boy-114/2022-fat-boy-114-f65/360/2022-fat-boy-114-f65-motorcycle-01.jpg?impolicy=myresize&rw=1600",
+      "cc": "1.868 cm3"
+    },
+    {
+      "id": 6,
+      "title": "HERITAGE CLASSIC",
+      "price": 119.395,
+      "description": "A cruiser americana por excelência. Detalhes vintage de parar o trânsito em puro estilo rock and roll.",
+      "image": "https://www.harley-davidson.com/content/dam/h-d/images/product-images/bikes/motorcycle/2022/2022-heritage-classic-114/2022-heritage-classic-114-010/360/2022-heritage-classic-114-010-motorcycle-01.jpg?impolicy=myresize&rw=1600",
+      "cc": "1.868 cm3"
+    }
+  ]
+}

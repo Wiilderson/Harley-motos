@@ -10,6 +10,7 @@ import {
   CardInput,
   CardButton,
   CardLink,
+  Span,
 } from "./Styled";
 
 function SignIn() {
@@ -69,7 +70,7 @@ function SignIn() {
               Sign Up
             </CardButton>
           </CardFieldset>
-          <span>{error}</span>
+          <Span>{error}</Span>
           <CardFieldset>
             <Link to="/cadastrar">
               <CardLink>
