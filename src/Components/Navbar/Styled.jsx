@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+const media = {
+  mobile: "@media(max-width: 768px)",
+};
+
 export const ContainerHeader = styled.div`
   width: 100%;
   margin: auto;
@@ -16,6 +20,17 @@ export const Menu = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  ${media.mobile} {
+    justify-content: flex-end;
+    > img {
+      display: none;
+    }
+
+    ul {
+      margin-right: 10px;
+      justify-content: flex-end;
+    }
+  }
   > img {
     width: 200px;
   }
@@ -75,6 +90,12 @@ export const DropdownContent = styled.div`
   font-weight: 500;
   color: #333;
 
+  ${media.mobile} {
+    position: absolute;
+    top: 110%;
+    left: -160px;
+  }
+
   div {
     padding: 10px;
     cursor: default;
@@ -101,6 +122,13 @@ export const DropdownContent = styled.div`
 export const FlexCart = styled.div`
   width: 290px;
   display: flex;
+
+  ${media.mobile} {
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+  }
+
   > img {
     border-radius: 50%;
     width: 50px;

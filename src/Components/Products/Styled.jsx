@@ -1,12 +1,19 @@
 import styled from "styled-components";
 
+const media = {
+  mobile: "@media(max-width: 768px)",
+};
 export const Container = styled.div`
   display: flex;
   width: 100%;
-  height: 851px;
+  height: 797px;
   margin: auto;
   background-color: #fafafa;
   flex-wrap: wrap;
+
+  ${media.mobile} {
+    margin: auto;
+  }
 `;
 
 export const CardsNewsContainer = styled.div`
@@ -18,6 +25,10 @@ export const CardsNewsContainer = styled.div`
   margin-top: 30px;
   flex-wrap: wrap;
   gap: 50px;
+
+  ${media.mobile} {
+    justify-content: center;
+  }
 `;
 
 export const CardNews = styled.div`
